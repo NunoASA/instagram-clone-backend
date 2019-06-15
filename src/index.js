@@ -10,7 +10,7 @@ const io = require('socket.io')(server);
 
 mongoose.connect('mongodb+srv://userFromApp:lvNl31r6tSV1BBkD@instagram-clone-obbbk.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
 
-app.use((req, res) => {
+app.use((req, res, next) => {
 	req.io = io;
 	next()
 })
